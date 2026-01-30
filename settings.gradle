@@ -1,0 +1,2 @@
+rootProject.name = "AndroidPOC"
+include ':app'
