@@ -6,8 +6,8 @@ platform :android do
     gradle(
       task: "bundle",
       build_type: "Release",
-      # This is the important part:
-      use_gradlew: false
+      # Point Fastlane directly to your script
+      gradle_path: "./gradlew"
     )
   end
 end
