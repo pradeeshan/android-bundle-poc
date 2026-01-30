@@ -1,7 +1,13 @@
 default_platform(:android)
+
 platform :android do
-  desc "Build AAB"
+  desc "Build the Android App Bundle"
   lane :build_aab do
-    gradle(task: "bundle", build_type: "Release")
+    gradle(
+      task: "bundle",
+      build_type: "Release",
+      # This is the important part:
+      use_gradlew: false
+    )
   end
 end
