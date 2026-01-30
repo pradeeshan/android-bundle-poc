@@ -4,10 +4,9 @@ pipeline {
         PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     }
     stages {
-        stage('Clean & Permissions') {
+        stage('Permissions') {
             steps {
-                // This creates a dummy gradlew if it's missing and gives permission
-                sh 'printf "index=0\nwhile [ \$index -lt 10 ]; do\n  echo \"Building...\"\n  index=\$((index+1))\ndone" > gradlew'
+                // Just give the real file permission, don't create a new one
                 sh 'chmod +x gradlew'
             }
         }
